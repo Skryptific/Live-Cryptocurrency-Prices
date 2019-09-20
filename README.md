@@ -1,2 +1,9 @@
-# Live-Cryptocurrency-Prices
- Live Cryptocurrency Prices, a plugin for MyBB 1.8 - Display live cryptocurrency prices with the use of Shoppy.gg API.
+# Live Cryptocurrency Prices
+
+Live Cryptocurrency Prices, a plugin for MyBB 1.8 - Display live cryptocurrency prices with the use of Shoppy.gg API.
+
+![alt text](https://i.imgur.com/qQ71vay.png)
+
+## Installation
+
+Upload all contents to your MyBB root and install the plugin in the admin control panel.
