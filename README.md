@@ -5,7 +5,7 @@ Live Cryptocurrency Prices, a plugin for MyBB 1.8 - Display live cryptocurrency 
 * Website: https://skryptec.net/
 * Copyright: © 2014 - 2019 Skryptec
 
-![alt text](https://i.imgur.com/qQ71vay.png)
+![alt text](https://i.imgur.com/7uW4fhE.png)
 
 ## Installation
 
