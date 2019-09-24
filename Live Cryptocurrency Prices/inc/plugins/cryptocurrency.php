@@ -119,7 +119,7 @@ function cryptocurrency_activate() {
 	<div style="flex: 3.5">
 		{$forums}
 	</div>
-	<div style="flex: 1">
+	<div style="flex: 1; padding-left: 1.5rem">
 		{$cryptocurrency}
 	</div>
 </div>');
@@ -132,7 +132,7 @@ function cryptocurrency_deactivate() {
 	<div style="flex: 3.5">
 		{$forums}
 	</div>
-	<div style="flex: 1">
+	<div style="flex: 1; padding-left: 1.5rem">
 		{$cryptocurrency}
 	</div>
 </div>') . "#i", '{$forums}');
