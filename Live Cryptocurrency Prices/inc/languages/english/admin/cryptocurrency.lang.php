@@ -6,11 +6,11 @@
 	* Website: https://skryptec.net/
 	* Copyright: © 2014 - 2019 Skryptec
 	*
-	* Display live cryptocurrency prices with the use of CoinMarketCap API.
+	* Display live cryptocurrency prices with the use of Shoppy.gg API.
 */
 
 $l['cryptocurrency'] = 'Live Cryptocurrency Prices';
-$l['cryptocurrency_desc'] = 'Display live cryptocurrency prices with the use of CoinMarketCap API.';
+$l['cryptocurrency_desc'] = 'Display live cryptocurrency prices with the use of Shoppy.gg API.';
 
 /** Settings */
 $l['cryptocurrency_settings'] = 'Live Cryptocurrency Prices Settings';
