@@ -7,6 +7,8 @@ Live Cryptocurrency Prices, a plugin for MyBB 1.8 - Display live cryptocurrency 
 
 ![alt text](https://i.imgur.com/7uW4fhE.png)
 
+![alt text](https://i.imgur.com/Qo1fIGY.png)
+
 MyBB mods download: https://community.mybb.com/mods.php?action=view&pid=1307
 
 ## Installation
