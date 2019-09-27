@@ -26,7 +26,7 @@ function cryptocurrency_info() {
 		'website' => 'https://skryptec.net/',
 		'author' => 'Skryptec',
 		'authorsite' => 'https://skryptec.net/',
-		'version' => '1.0',
+		'version' => '1.1',
 		'compatibility' => '18*',
 		'codename'      => 'skryptec_cryptocurrency',
 	];
