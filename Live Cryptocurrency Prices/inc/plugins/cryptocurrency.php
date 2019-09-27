@@ -47,14 +47,25 @@ function cryptocurrency_install() {
 
 	$gid = $db->insert_query('settinggroups', $settinggroup);
 
-	$settings = [
-		'cryptocurrency_enabled' => [
-			'title' => $lang->cryptocurrency_settings_enabled,
-			'description' => $lang->cryptocurrency_settings_enabled_desc,
+	$ticker = json_decode(file_get_contents('https://shoppy.gg/api/v1/public/ticker'), true);
+
+	$settings = [];
+	foreach($ticker['ticker'] as $currency) {
+		$settings['cryptocurrency_display_' .  $currency['name']] = [
+			'title' => 'Display ' . $currency['coin'] . '?',
+			'description' => '',
 			'optionscode' => 'yesno',
-			'disporder' => 1,
+			'disporder' => 2,
 			'value' => 1
-		]
+		];
+	}
+
+	$settings['cryptocurrency_enabled'] = [
+		'title' => $lang->cryptocurrency_settings_enabled,
+		'description' => $lang->cryptocurrency_settings_enabled_desc,
+		'optionscode' => 'yesno',
+		'disporder' => 1,
+		'value' => 1
 	];
 
 	foreach($settings as $name => $setting) {
@@ -81,7 +92,7 @@ function cryptocurrency_install() {
 		</div>
 	</div>
 	<br />',
-		'cryptocurrency_currency' => '<div style="flex: 0 1 50%">
+		'cryptocurrency_currency' => '<div style="flex: 0 1 50% ;flex-grow: 1;">
 		<div class="trow1" style="text-align: center; padding: .75rem">
 			<strong>{$currency[\'coin\']}</strong>
 			<br />
@@ -104,13 +115,7 @@ function cryptocurrency_install() {
 function cryptocurrency_is_installed() {
 	global $db;
 
-	$query = $db->simple_select('settinggroups', '*', "name='cryptocurrency'");
-
-	if($db->num_rows($query)) {
-		return true;
-	}
-
-	return false;
+	return ($db->num_rows($db->simple_select('settinggroups', '*', "name = 'cryptocurrency'")) > 0) ? true : false;
 }
 
 function cryptocurrency_activate() {
@@ -164,7 +169,9 @@ function cryptocurrency() {
 		$ticker['last_updated'] = my_date('relative', $dateTime->getTimeStamp());
 
 		foreach($ticker['ticker'] as $currency) {
-			eval("\$currencies .= \"".$templates->get("cryptocurrency_currency")."\";");
+			if($mybb->settings['cryptocurrency_display_' . $currency['name']] == 1) {
+				eval("\$currencies .= \"".$templates->get("cryptocurrency_currency")."\";");
+			}
 		}
 	
 		eval("\$cryptocurrency = \"".$templates->get("cryptocurrency")."\";");
